@@ -32,7 +32,7 @@ Ignores:
         Issue: javascript/NoHardcodedCredentials
         File: typeorm-db.js
         Lines: 10 - 13
-        Reason: This is a bening secret
+        Reason: This is a benign secret
         Expires: 2022-01-01 00:59:32.440942
 
 Total Issues: 2
