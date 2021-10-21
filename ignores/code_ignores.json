@@ -1,0 +1,10 @@
+[
+    {
+        "type": "javascript/NoHardcodedCredentials",
+        "file": "typeorm-db.js",
+        "startLine": 10,
+        "endLine": 13,
+        "reason": "This is a bening secret",
+        "expires": "2022-01-01 00:59:32.440942"
+    }
+]
