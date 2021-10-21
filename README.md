@@ -1,41 +1,19 @@
-# Snyk Code to HTML
+# Snyk Code Ignorer 🙈
 
-<img width="500" src="https://raw.githubusercontent.com/adamsnyk/snyk-code-test-handler/8ee7c96866edefd8e1bfa89babc0061847e9e383/assets/example-output.png">
+ Ignore individual Snyk Code issues for your reason and timeline.
 
 ## Getting Started
 
-Pipe `snyk code test --json` into other artifacts and formats.
 
-We're not sure where we're going with this but we need Snyk Code reporting support.
 
-To put new Snyk Code tests into a python dict, do:
+Pipe `snyk code test --json > examples/code_tests.json` into a file for ignoring.
 
-`snyk code test --json | python3 code_test_report`
+Create an `ignore.json` with the same format as `ignores/code_ignores.json`
 
-To run this on example test outputs, do:
+Now run `code_test_report` with paths to "Code Tests JSON" and "Ignores JSON" as args, respectively.
 
-`cat examples/code_tests.json | python3 code_test_report`
+Like the following:
 
-This is a start, enjoy!
+`python3 code_test_report examples/code_tests.json ignores/code_ignores.json`
 
-## Example in Automated Context
-
-```
-curl https://raw.githubusercontent.com/adamsnyk/snyk-code-test-handler/master/code_test_report/__main__.py > code_test_report.py
-snyk code test --json | python3 code_test_report.py
-rm code_test_report.py
-open output.html
-```
-
-OR 
-
-```
-curl https://raw.githubusercontent.com/adamsnyk/snyk-code-test-handler/master/code_test_report/__main__.py > code_test_report.py
-cat code_tests.json | python3 code_test_report.py
-rm code_test_report.py
-open output.html
-```
-
-## HTML Output
-
-HTML ourput is currently under the `output.html` but we can customise the location soon!
+Now you're ignoring individual issues, enjoy!

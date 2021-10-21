@@ -45,12 +45,12 @@ def cli():
     issues = []
     
     # 0. Get Issues JSON and Ignores JSON
-    ignores_json = get_data_from_file('ignores/code_ignores.json')
-    issues_json = get_data_from_file('examples/code_tests.json')
-    simple_issues_json = fetch_simple_results(issues_json)
-
+    issues_json = get_data_from_file(sys.argv[1])
+    issues_json = fetch_simple_results(issues_json)
+    ignores_json = get_data_from_file(sys.argv[2])
+    
     # 1. Cross reference each issue with the ignores
-    for issue in simple_issues_json:
+    for issue in issues_json:
         for ignore in ignores_json:
             if  issue.get('file', 1) == ignore.get('file', 0) \
                 and issue.get('type', 1) ==  ignore.get('type', 0)\
